@@ -22,26 +22,33 @@ The canonical architecture description is in `ARCHITEKTUR-PLAN & PROMPT.md` at t
 
 1. **Data layer**
    - `stations.json`: public station master data (name + GPS coordinates).
-   - `employees.json`: public list of 13 allowed employees (not yet present at root; create when implementing the frontend).
-   - GitHub Secrets: `APP_PIN`, `GOOGLE_SERVICE_ACCOUNT_JSON`, `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`, `GH_PAT` (or equivalent token for repository dispatch).
+   - `employees.json`: sensitive employee whitelist – wird **nicht** im Repository abgelegt. Die echte Liste liegt als Cloudflare Worker Secret `EMPLOYEES_JSON`. Im Repository befindet sich nur `employees.example.json` als Vorlage.
+   - Cloudflare Worker Secrets: `APP_PIN`, `GH_PAT`, `DISPATCH_SECRET`, `EMPLOYEES_JSON`.
+   - GitHub Repository Secrets: `DISPATCH_SECRET`, `GOOGLE_SERVICE_ACCOUNT_JSON`, `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`.
+   - Frontend `config.js`: nur öffentliche `PROXY_URL`.
 
-2. **Frontend (GitHub Pages)**
-   - `index.html` + `app.js` (not yet present).
-   - Screen 1: PIN gatekeeper. Blocks access until the correct `APP_PIN` is entered.
+2. **Cloudflare Worker proxy (`proxy/worker.js`)**
+   - Holds all sensitive secrets (`APP_PIN`, `GH_PAT`, `DISPATCH_SECRET`, `EMPLOYEES_JSON`).
+   - Endpoints: `POST /employees` (validates PIN, returns employee list) and `POST /checkin` (validates PIN, employee, station, shift and geofencing, then forwards to GitHub Repository Dispatch API).
+   - Validates geofencing serverseitig als autoritative Prüfung.
+
+3. **Frontend (GitHub Pages)**
+   - `index.html` + `app.js`.
+   - Screen 1: PIN gatekeeper. Nach korrekter PIN lädt der Worker die Mitarbeiterliste und das Check-in-Formular wird angezeigt.
    - Screen 2: check-in form with searchable dropdowns for employee and station, plus shift selection `[Früh, Spät, Nacht]`.
-   - Geofencing: use `navigator.geolocation` and Haversine distance to the selected station. Block submission if GPS is disabled or distance exceeds the allowed radius.
-   - Submit via HTTPS POST to the GitHub Repository Dispatch API (`/repos/{owner}/{repo}/dispatches`) with event type `checkin_event` and payload: `pin`, `name`, `station`, `shift`, `latitude`, `longitude`, `distance_m`, `timestamp`.
+   - Geofencing: clientseitige Hilfsprüfung via `navigator.geolocation` und Haversine; endgültige Prüfung erfolgt im Worker.
+   - Submit via HTTPS POST an den Cloudflare Worker (`/checkin`). `config.js` enthält ausschließlich die öffentliche `PROXY_URL`; keine Tokens oder PINs.
 
-3. **Check-in workflow (`.github/workflows/checkin.yml` + `checkin.py`)**
+4. **Check-in workflow (`.github/workflows/checkin.yml` + `checkin.py`)**
    - Triggered by `checkin_event`.
-   - Verify submitted PIN against `APP_PIN`; abort on mismatch.
+   - Verify the shared `DISPATCH_SECRET`; abort on mismatch.
    - Append one row per check-in to Google Sheets:
      - Employee sheet `{Name}_{MM_YYYY}`: [Date/Time, Station, Shift, Hours (7.0), Deviation (m), GPS Lat, GPS Long, Google Maps Link].
      - Station sheet `{Station}_{MM_YYYY}`: [Date/Time, Name, Shift, Hours (7.0), Deviation (m), GPS Lat, GPS Long, Google Maps Link].
    - Update monthly hour totals in the employee sheet.
    - Send Telegram message with name, station, shift, deviation, and map link.
 
-4. **Monthly-report workflow (`.github/workflows/monthly_report.yml` + `generate_excel.py`)**
+5. **Monthly-report workflow (`.github/workflows/monthly_report.yml` + `generate_excel.py`)**
    - Cron trigger: 1st of the month at 07:00 UTC.
    - Download previous month's employee and station sheets.
    - Generate `Monatsbericht_{MM_YYYY}.xlsx` with one tab per original sheet.
@@ -84,7 +91,8 @@ See `.github/instructions/security.instructions.md` for the full checklist. Crit
 
 - Rotate any secret that has ever been committed (including `service_account.json` if it was previously tracked).
 - Parameterize all Google Sheets/HTTP interactions; do not construct strings from unchecked user input.
-- Rate-limit or otherwise protect the Repository Dispatch endpoint; the frontend exposes the event type and repository name to any visitor.
+- **Never expose `GH_PAT`, `APP_PIN`, or `DISPATCH_SECRET` in the frontend.** All three live only in Cloudflare Worker Secrets.
+- Keep the employee whitelist (`EMPLOYEES_JSON`) in Cloudflare Worker Secrets; do not commit `employees.json`.
 - Sanitize Telegram message text to avoid Markdown/HTML injection.
 
 ## Agent Usage

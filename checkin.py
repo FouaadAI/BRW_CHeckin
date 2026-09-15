@@ -50,10 +50,10 @@ def get_required_env(name: str) -> str:
     return value
 
 
-def validate_pin(provided_pin: str, expected_pin: str) -> None:
-    """Abort execution if the provided PIN does not match the expected PIN."""
-    if provided_pin != expected_pin:
-        raise PermissionError("PIN mismatch: check-in denied")
+def validate_dispatch_secret(provided_secret: Any, expected_secret: str) -> None:
+    """Abort execution if the repository_dispatch secret does not match."""
+    if not isinstance(provided_secret, str) or provided_secret != expected_secret:
+        raise PermissionError("Dispatch secret mismatch: check-in denied")
 
 
 def validate_payload(payload: dict[str, Any]) -> dict[str, Any]:
@@ -204,15 +204,15 @@ def open_spreadsheet(credentials_json: str, spreadsheet_id: str) -> gspread.Spre
 
 def process_checkin() -> None:
     """Main entry point for the repository dispatch check-in workflow."""
-    app_pin = get_required_env("APP_PIN")
+    dispatch_secret = get_required_env("DISPATCH_SECRET")
     credentials_json = get_required_env("GOOGLE_SERVICE_ACCOUNT_JSON")
     telegram_token = get_required_env("TELEGRAM_BOT_TOKEN")
     telegram_chat_id = get_required_env("TELEGRAM_CHAT_ID")
     spreadsheet_id = get_required_env("GOOGLE_SPREADSHEET_ID")
 
     payload = load_payload()
+    validate_dispatch_secret(payload.get("dispatch_secret"), dispatch_secret)
     validated = validate_payload(payload)
-    validate_pin(str(validated["pin"]), app_pin)
 
     timestamp = validated["timestamp"]
     month_suffix = month_suffix_from_timestamp(timestamp)

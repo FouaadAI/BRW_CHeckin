@@ -1,5 +1,4 @@
 const CONFIG = Object.freeze({
-  DISPATCH_URL: 'https://api.github.com/repos/FouaadAI/BRW_CHeckin/dispatches',
   MAX_DISTANCE_METERS: 200,
   EARTH_RADIUS_METERS: 6_371_000,
   PIN_LENGTH: 6,
@@ -26,18 +25,19 @@ const dom = Object.freeze({
 let state = Object.freeze({
   employees: [],
   stations: [],
+  pin: '',
 });
 
 const COOLDOWN_MS = 10000;
 let lastSubmitTime = 0;
 
-function assertConfigurationLoaded() {
-  if (!window.APP_PIN || !window.GH_PAT) {
+function getProxyUrl() {
+  if (!window.PROXY_URL) {
     throw new Error(
-      'Konfiguration fehlt. Bitte config.js aus config.example.js erstellen.'
+      'Konfiguration fehlt. Bitte config.js aus config.example.js erstellen und PROXY_URL setzen.'
     );
   }
-  return true;
+  return window.PROXY_URL.replace(/\/$/, '');
 }
 
 async function loadJson(url) {
@@ -46,6 +46,28 @@ async function loadJson(url) {
     throw new Error(`Daten konnten nicht geladen werden: ${url}`);
   }
   return response.json();
+}
+
+async function postJson(url, body) {
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  });
+
+  const text = await response.text().catch(() => '');
+  if (!response.ok) {
+    let message = 'Fehler beim Senden. Bitte erneut versuchen.';
+    try {
+      const parsed = JSON.parse(text);
+      if (parsed.error) message = parsed.error;
+    } catch {
+      // ignore
+    }
+    throw new Error(message);
+  }
+
+  return text ? JSON.parse(text) : null;
 }
 
 function populateDatalist(datalistElement, optionValues) {
@@ -61,19 +83,9 @@ function populateDatalist(datalistElement, optionValues) {
   datalistElement.appendChild(fragment);
 }
 
-async function initializeForm() {
-  const [employees, stations] = await Promise.all([
-    loadJson('employees.json'),
-    loadJson('stations.json'),
-  ]);
-
-  state = Object.freeze({
-    ...state,
-    employees,
-    stations,
-  });
-
-  populateDatalist(dom.nameList, employees);
+async function loadStations() {
+  const stations = await loadJson('stations.json');
+  state = Object.freeze({ ...state, stations });
   populateDatalist(
     dom.stationList,
     stations.map((station) => station.name)
@@ -147,26 +159,6 @@ function getCurrentPosition() {
   });
 }
 
-async function sendCheckin(payload) {
-  const response = await fetch(CONFIG.DISPATCH_URL, {
-    method: 'POST',
-    headers: {
-      Accept: 'application/vnd.github+json',
-      Authorization: `Bearer ${window.GH_PAT}`,
-      'Content-Type': 'application/json',
-      'X-GitHub-Api-Version': '2022-11-28',
-    },
-    body: JSON.stringify({
-      event_type: 'checkin_event',
-      client_payload: payload,
-    }),
-  });
-
-  if (!response.ok) {
-    throw new Error('Fehler beim Senden. Bitte erneut versuchen.');
-  }
-}
-
 function showMessage(element, message, type = 'error') {
   element.textContent = message;
   element.className = type === 'success' ? 'message success' : 'message';
@@ -182,7 +174,7 @@ function showFormScreen() {
   dom.formScreen.hidden = false;
 }
 
-function handlePinSubmit(event) {
+async function handlePinSubmit(event) {
   event.preventDefault();
   clearMessage(dom.pinMessage);
 
@@ -193,12 +185,21 @@ function handlePinSubmit(event) {
     return;
   }
 
-  if (pin !== window.APP_PIN) {
-    showMessage(dom.pinMessage, 'Falscher PIN.');
-    return;
-  }
+  try {
+    const proxyUrl = getProxyUrl();
+    const { employees } = await postJson(`${proxyUrl}/employees`, { pin });
 
-  showFormScreen();
+    if (!Array.isArray(employees) || employees.length === 0) {
+      throw new Error('Keine Mitarbeiter geladen.');
+    }
+
+    state = Object.freeze({ ...state, employees, pin });
+    populateDatalist(dom.nameList, employees);
+    await loadStations();
+    showFormScreen();
+  } catch (error) {
+    showMessage(dom.pinMessage, error.message);
+  }
 }
 
 function isOnCooldown() {
@@ -259,8 +260,9 @@ async function handleCheckinSubmit(event) {
       return;
     }
 
-    await sendCheckin({
-      pin: window.APP_PIN,
+    const proxyUrl = getProxyUrl();
+    await postJson(`${proxyUrl}/checkin`, {
+      pin: state.pin,
       name,
       station: stationName,
       shift,
@@ -279,8 +281,7 @@ async function handleCheckinSubmit(event) {
 
 async function initialize() {
   try {
-    assertConfigurationLoaded();
-    await initializeForm();
+    getProxyUrl();
     dom.pinForm.addEventListener('submit', handlePinSubmit);
     dom.checkinForm.addEventListener('submit', handleCheckinSubmit);
   } catch (error) {

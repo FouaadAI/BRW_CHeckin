@@ -11,8 +11,14 @@ import checkin
 
 
 @pytest.fixture
-def valid_payload():
+def dispatch_secret():
+    return "dispatch-secret-123456"
+
+
+@pytest.fixture
+def valid_payload(dispatch_secret):
     return {
+        "dispatch_secret": dispatch_secret,
         "pin": "123456",
         "name": "Ahmad Alsheekh",
         "station": "U Alexanderplatz",
@@ -61,13 +67,18 @@ def test_get_required_env_missing():
             checkin.get_required_env("MISSING")
 
 
-def test_validate_pin_ok():
-    checkin.validate_pin("123456", "123456")
+def test_validate_dispatch_secret_ok():
+    checkin.validate_dispatch_secret("secret", "secret")
 
 
-def test_validate_pin_mismatch():
+def test_validate_dispatch_secret_mismatch():
     with pytest.raises(PermissionError):
-        checkin.validate_pin("000000", "123456")
+        checkin.validate_dispatch_secret("wrong", "secret")
+
+
+def test_validate_dispatch_secret_missing():
+    with pytest.raises(PermissionError):
+        checkin.validate_dispatch_secret(None, "secret")
 
 
 def test_validate_payload_ok(valid_payload):
@@ -174,7 +185,7 @@ def test_send_telegram_message(mock_post):
 @patch.dict(
     os.environ,
     {
-        "APP_PIN": "123456",
+        "DISPATCH_SECRET": "dispatch-secret-123456",
         "GOOGLE_SERVICE_ACCOUNT_JSON": '{"type": "service_account"}',
         "TELEGRAM_BOT_TOKEN": "token",
         "TELEGRAM_CHAT_ID": "chat",
@@ -209,7 +220,7 @@ def test_process_checkin_success(
 @patch.dict(
     os.environ,
     {
-        "APP_PIN": "123456",
+        "DISPATCH_SECRET": "dispatch-secret-123456",
         "GOOGLE_SERVICE_ACCOUNT_JSON": '{"type": "service_account"}',
         "TELEGRAM_BOT_TOKEN": "token",
         "TELEGRAM_CHAT_ID": "chat",
@@ -225,4 +236,26 @@ def test_process_checkin_rejected_by_cooldown(
     mock_load_payload.return_value = valid_payload
     mock_recent_checkin.return_value = True
     with pytest.raises(ValueError):
+        checkin.process_checkin()
+
+
+@patch("checkin.load_payload")
+@patch.dict(
+    os.environ,
+    {
+        "DISPATCH_SECRET": "dispatch-secret-123456",
+        "GOOGLE_SERVICE_ACCOUNT_JSON": '{"type": "service_account"}',
+        "TELEGRAM_BOT_TOKEN": "token",
+        "TELEGRAM_CHAT_ID": "chat",
+        "GOOGLE_SPREADSHEET_ID": "sheet_id",
+    },
+    clear=False,
+)
+def test_process_checkin_rejected_by_bad_dispatch_secret(
+    mock_load_payload,
+    valid_payload,
+):
+    payload = {**valid_payload, "dispatch_secret": "wrong-secret"}
+    mock_load_payload.return_value = payload
+    with pytest.raises(PermissionError):
         checkin.process_checkin()
