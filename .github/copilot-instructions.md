@@ -1,5 +1,7 @@
 # BRW Check-in — Copilot Instructions
 
+> **Before doing any work, read `SECOND_BRAIN.md` in the repository root.** It is the living source of truth for architecture, security rules, secrets inventory, decision log, change log, and open todos. Update it after every relevant change.
+
 Project language/domain: German (Berlin U-Bahn station check-ins). UI labels, sheet names, and Telegram messages are in German.
 
 ## Project Overview
@@ -107,6 +109,7 @@ The `.github/instructions/agents.instructions.md` file defines the shared agents
 
 ## Useful Context Files to Read First
 
+- **`SECOND_BRAIN.md`** — living source of truth: architecture, rules, secrets inventory, decisions, changes, checklists, and todos. Read this first in every session.
 - `ARCHITEKTUR-PLAN & PROMPT.md` — architecture and original requirements.
 - `stations.json` — sample of the station data shape.
 - `.github/instructions/security.instructions.md` — secret handling rules.

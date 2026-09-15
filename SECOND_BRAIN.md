@@ -147,6 +147,7 @@ Das statische Frontend darf **keine Secrets** enthalten. Daher leitet ein Cloudf
 
 | Datum | Änderung | Dateien betroffen | Autor |
 |---|---|---|---|
+| 2026-09-15 | Second Brain in `.github/copilot-instructions.md` als Pflichtlektüre verlinkt | `.github/copilot-instructions.md`, `SECOND_BRAIN.md` | Copilot |
 | 2026-09-15 | Initialer Second Brain erstellt | `SECOND_BRAIN.md` | Copilot |
 | 2026-09-15 | Security-Refactor mit Cloudflare Worker Proxy | `proxy/worker.js`, `app.js`, `checkin.py`, `.github/workflows/checkin.yml`, `tests/test_checkin.py`, `README.md`, `SECRETS_INSTRUCTIONS.md`, `.github/copilot-instructions.md` | Copilot |
 | 2026-09-15 | `employees.json` aus Repo entfernt, `employees.example.json` hinzugefügt | `employees.json`, `employees.example.json`, `.gitignore` | Copilot |
@@ -216,7 +217,7 @@ pytest --cov=. --cov-report=html
 
 - **Sprache:** Deutsch (Projekt- und Benutzerkommunikation).
 - **Commit-Stil:** Conventional Commits, kurz und präzise.
-- **Dokumentation:** Wichtige Änderungen sofort in `README.md`, `SECRETS_INSTRUCTIONS.md` und `SECOND_BRAIN.md` nachziehen.
+- **Dokumentation:** Wichtige Änderungen sofort in `README.md`, `SECRETS_INSTRUCTIONS.md` und `SECOND_BRAIN.md` nachziehen. Aktualisiere zudem `.github/copilot-instructions.md`, wenn sich Regeln, Architektur oder Pflichtlektüre ändern.
 - **Sicherheit:** Bei Unsicherheit immer „Secure by Default“ wählen und den Benutzer fragen.
 - **Tests:** Keine Code-Änderung ohne passenden Test oder explizite Begründung, warum keiner nötig ist.
 - **Iterativ arbeiten:** Bei komplexen Aufgaben zuerst Plan, dann Implementierung, dann Review, dann Dokumentation.
