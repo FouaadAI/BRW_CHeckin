@@ -1,0 +1,882 @@
+[
+  {
+    "name": "U Adenauerplatz",
+    "lat": 52.500003,
+    "lng": 13.307323
+  },
+  {
+    "name": "U Afrikanische Straße",
+    "lat": 52.560238,
+    "lng": 13.334618
+  },
+  {
+    "name": "U Alexanderplatz",
+    "lat": 52.521585,
+    "lng": 13.413908
+  },
+  {
+    "name": "U Alt-Mariendorf",
+    "lat": 52.439675,
+    "lng": 13.387514
+  },
+  {
+    "name": "U Alt-Tegel",
+    "lat": 52.589456,
+    "lng": 13.283751
+  },
+  {
+    "name": "U Alt-Tempelhof",
+    "lat": 52.465522,
+    "lng": 13.38563
+  },
+  {
+    "name": "U Altstadt Spandau",
+    "lat": 52.538838,
+    "lng": 13.206257
+  },
+  {
+    "name": "U Amrumer Straße",
+    "lat": 52.542333,
+    "lng": 13.350155
+  },
+  {
+    "name": "U Anton-Wilhelm-Amo-Straße",
+    "lat": 52.511792,
+    "lng": 13.385091
+  },
+  {
+    "name": "U Augsburger Straße",
+    "lat": 52.500442,
+    "lng": 13.336464
+  },
+  {
+    "name": "U Bayerischer Platz",
+    "lat": 52.488576,
+    "lng": 13.340544
+  },
+  {
+    "name": "U Berliner Straße",
+    "lat": 52.48733,
+    "lng": 13.33101
+  },
+  {
+    "name": "U Bernauer Straße",
+    "lat": 52.537438,
+    "lng": 13.396617
+  },
+  {
+    "name": "U Biesdorf-Süd",
+    "lat": 52.499605,
+    "lng": 13.546532
+  },
+  {
+    "name": "U Birkenstraße",
+    "lat": 52.532382,
+    "lng": 13.341353
+  },
+  {
+    "name": "U Bismarckstraße",
+    "lat": 52.511515,
+    "lng": 13.305239
+  },
+  {
+    "name": "U Blaschkoallee",
+    "lat": 52.45208,
+    "lng": 13.449202
+  },
+  {
+    "name": "U Blissestraße",
+    "lat": 52.486489,
+    "lng": 13.320545
+  },
+  {
+    "name": "U Boddinstraße",
+    "lat": 52.480168,
+    "lng": 13.425281
+  },
+  {
+    "name": "U Borsigwerke",
+    "lat": 52.581841,
+    "lng": 13.290592
+  },
+  {
+    "name": "U Brandenburger Tor",
+    "lat": 52.516605,
+    "lng": 13.38099
+  },
+  {
+    "name": "U Breitenbachplatz",
+    "lat": 52.467027,
+    "lng": 13.308871
+  },
+  {
+    "name": "U Britz-Süd",
+    "lat": 52.437792,
+    "lng": 13.448187
+  },
+  {
+    "name": "U Bundesplatz",
+    "lat": 52.477648,
+    "lng": 13.3285
+  },
+  {
+    "name": "U Bundestag",
+    "lat": 52.520112,
+    "lng": 13.372955
+  },
+  {
+    "name": "U Bülowstraße",
+    "lat": 52.497586,
+    "lng": 13.363221
+  },
+  {
+    "name": "U Cottbusser Platz",
+    "lat": 52.533833,
+    "lng": 13.596402
+  },
+  {
+    "name": "U Dahlem-Dorf",
+    "lat": 52.45741,
+    "lng": 13.289705
+  },
+  {
+    "name": "U Deutsche Oper",
+    "lat": 52.511837,
+    "lng": 13.310533
+  },
+  {
+    "name": "U Eberswalder Straße",
+    "lat": 52.541515,
+    "lng": 13.412177
+  },
+  {
+    "name": "U Eisenacher Straße",
+    "lat": 52.489553,
+    "lng": 13.350169
+  },
+  {
+    "name": "U Elsterwerdaer Platz",
+    "lat": 52.505293,
+    "lng": 13.560878
+  },
+  {
+    "name": "U Ernst-Reuter-Platz",
+    "lat": 52.511885,
+    "lng": 13.322161
+  },
+  {
+    "name": "U Fehrbelliner Platz",
+    "lat": 52.490299,
+    "lng": 13.314844
+  },
+  {
+    "name": "U Frankfurter Allee",
+    "lat": 52.513623,
+    "lng": 13.475436
+  },
+  {
+    "name": "U Frankfurter Tor",
+    "lat": 52.515818,
+    "lng": 13.453974
+  },
+  {
+    "name": "U Franz-Neumann-Platz",
+    "lat": 52.564539,
+    "lng": 13.363924
+  },
+  {
+    "name": "U Französische Straße",
+    "lat": 52.514825,
+    "lng": 13.389171
+  },
+  {
+    "name": "U Freie Universität (Thielplatz)",
+    "lat": 52.451039,
+    "lng": 13.281744
+  },
+  {
+    "name": "U Friedrich-Wilhelm-Platz",
+    "lat": 52.472122,
+    "lng": 13.32873
+  },
+  {
+    "name": "U Friedrichsfelde",
+    "lat": 52.506164,
+    "lng": 13.512839
+  },
+  {
+    "name": "U Friedrichstraße",
+    "lat": 52.520263,
+    "lng": 13.388286
+  },
+  {
+    "name": "U Gesundbrunnen",
+    "lat": 52.548822,
+    "lng": 13.388306
+  },
+  {
+    "name": "U Gleisdreieck",
+    "lat": 52.499526,
+    "lng": 13.374032
+  },
+  {
+    "name": "U Gneisenaustraße",
+    "lat": 52.49129,
+    "lng": 13.395825
+  },
+  {
+    "name": "U Grenzallee",
+    "lat": 52.462882,
+    "lng": 13.444772
+  },
+  {
+    "name": "U Görlitzer Bahnhof",
+    "lat": 52.499263,
+    "lng": 13.428036
+  },
+  {
+    "name": "U Güntzelstraße",
+    "lat": 52.492084,
+    "lng": 13.331006
+  },
+  {
+    "name": "U Halemweg",
+    "lat": 52.536626,
+    "lng": 13.286104
+  },
+  {
+    "name": "U Hallesches Tor",
+    "lat": 52.49776,
+    "lng": 13.39065
+  },
+  {
+    "name": "U Hansaplatz",
+    "lat": 52.518008,
+    "lng": 13.342037
+  },
+  {
+    "name": "U Haselhorst",
+    "lat": 52.538718,
+    "lng": 13.233094
+  },
+  {
+    "name": "U Hauptbahnhof",
+    "lat": 52.525282,
+    "lng": 13.370124
+  },
+  {
+    "name": "U Hausvogteiplatz",
+    "lat": 52.51335,
+    "lng": 13.395591
+  },
+  {
+    "name": "U Heidelberger Platz",
+    "lat": 52.479796,
+    "lng": 13.312883
+  },
+  {
+    "name": "U Heinrich-Heine-Straße",
+    "lat": 52.510448,
+    "lng": 13.416027
+  },
+  {
+    "name": "U Hellersdorf",
+    "lat": 52.536688,
+    "lng": 13.606672
+  },
+  {
+    "name": "U Hermannplatz",
+    "lat": 52.486286,
+    "lng": 13.424553
+  },
+  {
+    "name": "U Hermannstraße",
+    "lat": 52.467262,
+    "lng": 13.431466
+  },
+  {
+    "name": "U Hohenzollernplatz",
+    "lat": 52.494085,
+    "lng": 13.324755
+  },
+  {
+    "name": "U Holzhauser Straße",
+    "lat": 52.575692,
+    "lng": 13.296113
+  },
+  {
+    "name": "U Hönow",
+    "lat": 52.538433,
+    "lng": 13.633123
+  },
+  {
+    "name": "U Innsbrucker Platz",
+    "lat": 52.478987,
+    "lng": 13.343674
+  },
+  {
+    "name": "U Jakob-Kaiser-Platz",
+    "lat": 52.536279,
+    "lng": 13.293301
+  },
+  {
+    "name": "U Jannowitzbrücke",
+    "lat": 52.515355,
+    "lng": 13.418173
+  },
+  {
+    "name": "U Johannisthaler Chaussee",
+    "lat": 52.429321,
+    "lng": 13.453338
+  },
+  {
+    "name": "U Jungfernheide",
+    "lat": 52.530788,
+    "lng": 13.30063
+  },
+  {
+    "name": "U Kaiserdamm",
+    "lat": 52.510092,
+    "lng": 13.283126
+  },
+  {
+    "name": "U Kaiserin-Augusta-Straße",
+    "lat": 52.459976,
+    "lng": 13.384635
+  },
+  {
+    "name": "U Karl-Bonhoeffer-Nervenklinik",
+    "lat": 52.578623,
+    "lng": 13.333503
+  },
+  {
+    "name": "U Karl-Marx-Straße",
+    "lat": 52.47627,
+    "lng": 13.439338
+  },
+  {
+    "name": "U Kaulsdorf-Nord",
+    "lat": 52.521153,
+    "lng": 13.588918
+  },
+  {
+    "name": "U Kienberg (Gärten der Welt)",
+    "lat": 52.528615,
+    "lng": 13.590637
+  },
+  {
+    "name": "U Kleistpark",
+    "lat": 52.490367,
+    "lng": 13.36022
+  },
+  {
+    "name": "U Klosterstraße",
+    "lat": 52.517235,
+    "lng": 13.412432
+  },
+  {
+    "name": "U Kochstraße/Checkpoint Charlie",
+    "lat": 52.506045,
+    "lng": 13.390612
+  },
+  {
+    "name": "U Konstanzer Straße",
+    "lat": 52.494532,
+    "lng": 13.309074
+  },
+  {
+    "name": "U Kottbusser Tor",
+    "lat": 52.498985,
+    "lng": 13.418311
+  },
+  {
+    "name": "U Krumme Lanke",
+    "lat": 52.443448,
+    "lng": 13.241392
+  },
+  {
+    "name": "U Kurfürstendamm",
+    "lat": 52.503822,
+    "lng": 13.331437
+  },
+  {
+    "name": "U Kurfürstenstraße",
+    "lat": 52.49996,
+    "lng": 13.361941
+  },
+  {
+    "name": "U Kurt-Schumacher-Platz",
+    "lat": 52.563227,
+    "lng": 13.327129
+  },
+  {
+    "name": "U Leinestraße",
+    "lat": 52.472979,
+    "lng": 13.428354
+  },
+  {
+    "name": "U Leopoldplatz",
+    "lat": 52.546383,
+    "lng": 13.359167
+  },
+  {
+    "name": "U Lichtenberg",
+    "lat": 52.511115,
+    "lng": 13.498602
+  },
+  {
+    "name": "U Lindauer Allee",
+    "lat": 52.575416,
+    "lng": 13.338425
+  },
+  {
+    "name": "U Lipschitzallee",
+    "lat": 52.424642,
+    "lng": 13.462698
+  },
+  {
+    "name": "U Louis-Lewin-Straße",
+    "lat": 52.538977,
+    "lng": 13.618346
+  },
+  {
+    "name": "U Magdalenenstraße (Campus für Demokratie)",
+    "lat": 52.512454,
+    "lng": 13.487079
+  },
+  {
+    "name": "U Mehringdamm",
+    "lat": 52.494131,
+    "lng": 13.388617
+  },
+  {
+    "name": "U Mendelssohn-Bartholdy-Park",
+    "lat": 52.503724,
+    "lng": 13.374861
+  },
+  {
+    "name": "U Mierendorffplatz",
+    "lat": 52.526344,
+    "lng": 13.304772
+  },
+  {
+    "name": "U Moritzplatz",
+    "lat": 52.503662,
+    "lng": 13.410748
+  },
+  {
+    "name": "U Museumsinsel",
+    "lat": 52.517263,
+    "lng": 13.398884
+  },
+  {
+    "name": "U Märkisches Museum",
+    "lat": 52.512335,
+    "lng": 13.410175
+  },
+  {
+    "name": "U Möckernbrücke",
+    "lat": 52.498693,
+    "lng": 13.383123
+  },
+  {
+    "name": "U Naturkundemuseum",
+    "lat": 52.531272,
+    "lng": 13.38216
+  },
+  {
+    "name": "U Nauener Platz",
+    "lat": 52.551406,
+    "lng": 13.36717
+  },
+  {
+    "name": "U Neu-Westend",
+    "lat": 52.516215,
+    "lng": 13.259236
+  },
+  {
+    "name": "U Neukölln",
+    "lat": 52.468596,
+    "lng": 13.44182
+  },
+  {
+    "name": "U Nollendorfplatz",
+    "lat": 52.499597,
+    "lng": 13.35373
+  },
+  {
+    "name": "U Olympia-Stadion",
+    "lat": 52.516864,
+    "lng": 13.250448
+  },
+  {
+    "name": "U Onkel Toms Hütte",
+    "lat": 52.449891,
+    "lng": 13.253075
+  },
+  {
+    "name": "U Oranienburger Tor",
+    "lat": 52.5256,
+    "lng": 13.387358
+  },
+  {
+    "name": "U Oskar-Helene-Heim",
+    "lat": 52.450361,
+    "lng": 13.269071
+  },
+  {
+    "name": "U Osloer Straße",
+    "lat": 52.55716,
+    "lng": 13.373271
+  },
+  {
+    "name": "U Otisstraße",
+    "lat": 52.571034,
+    "lng": 13.302925
+  },
+  {
+    "name": "U Pankow",
+    "lat": 52.56678,
+    "lng": 13.41172
+  },
+  {
+    "name": "U Pankstraße",
+    "lat": 52.552262,
+    "lng": 13.381458
+  },
+  {
+    "name": "U Paracelsus-Bad",
+    "lat": 52.574243,
+    "lng": 13.348511
+  },
+  {
+    "name": "U Paradestraße",
+    "lat": 52.478019,
+    "lng": 13.386256
+  },
+  {
+    "name": "U Parchimer Allee",
+    "lat": 52.444774,
+    "lng": 13.4496
+  },
+  {
+    "name": "U Paulsternstraße",
+    "lat": 52.537982,
+    "lng": 13.247818
+  },
+  {
+    "name": "U Platz der Luftbrücke",
+    "lat": 52.486084,
+    "lng": 13.385951
+  },
+  {
+    "name": "U Podbielskiallee",
+    "lat": 52.464103,
+    "lng": 13.295752
+  },
+  {
+    "name": "U Potsdamer Platz",
+    "lat": 52.509159,
+    "lng": 13.378215
+  },
+  {
+    "name": "U Prinzenstraße",
+    "lat": 52.498397,
+    "lng": 13.40591
+  },
+  {
+    "name": "U Rathaus Neukölln",
+    "lat": 52.481652,
+    "lng": 13.434179
+  },
+  {
+    "name": "U Rathaus Reinickendorf",
+    "lat": 52.588406,
+    "lng": 13.325733
+  },
+  {
+    "name": "U Rathaus Schöneberg",
+    "lat": 52.483177,
+    "lng": 13.341972
+  },
+  {
+    "name": "U Rathaus Spandau",
+    "lat": 52.535171,
+    "lng": 13.199774
+  },
+  {
+    "name": "U Rathaus Steglitz",
+    "lat": 52.456798,
+    "lng": 13.320934
+  },
+  {
+    "name": "U Rehberge",
+    "lat": 52.556689,
+    "lng": 13.340984
+  },
+  {
+    "name": "U Reinickendorfer Straße",
+    "lat": 52.540043,
+    "lng": 13.370289
+  },
+  {
+    "name": "U Residenzstraße",
+    "lat": 52.57119,
+    "lng": 13.360474
+  },
+  {
+    "name": "U Richard-Wagner-Platz",
+    "lat": 52.517387,
+    "lng": 13.306588
+  },
+  {
+    "name": "U Rohrdamm",
+    "lat": 52.536995,
+    "lng": 13.262306
+  },
+  {
+    "name": "U Rosa-Luxemburg-Platz",
+    "lat": 52.527695,
+    "lng": 13.410487
+  },
+  {
+    "name": "U Rosenthaler Platz",
+    "lat": 52.5299,
+    "lng": 13.401121
+  },
+  {
+    "name": "U Rotes Rathaus",
+    "lat": 52.518842,
+    "lng": 13.408083
+  },
+  {
+    "name": "U Rudow",
+    "lat": 52.41617,
+    "lng": 13.495398
+  },
+  {
+    "name": "U Ruhleben",
+    "lat": 52.525674,
+    "lng": 13.241419
+  },
+  {
+    "name": "U Rüdesheimer Platz",
+    "lat": 52.473246,
+    "lng": 13.314415
+  },
+  {
+    "name": "U Samariterstraße",
+    "lat": 52.51474,
+    "lng": 13.464441
+  },
+  {
+    "name": "U Scharnweberstraße",
+    "lat": 52.566817,
+    "lng": 13.312622
+  },
+  {
+    "name": "U Schillingstraße",
+    "lat": 52.52079,
+    "lng": 13.421112
+  },
+  {
+    "name": "U Schlesisches Tor",
+    "lat": 52.500834,
+    "lng": 13.441463
+  },
+  {
+    "name": "U Schloßstraße",
+    "lat": 52.461481,
+    "lng": 13.325095
+  },
+  {
+    "name": "U Schwartzkopffstraße",
+    "lat": 52.535157,
+    "lng": 13.377318
+  },
+  {
+    "name": "U Schönhauser Allee",
+    "lat": 52.549489,
+    "lng": 13.413711
+  },
+  {
+    "name": "U Schönleinstraße",
+    "lat": 52.493055,
+    "lng": 13.422057
+  },
+  {
+    "name": "U Seestraße",
+    "lat": 52.549803,
+    "lng": 13.353118
+  },
+  {
+    "name": "U Senefelderplatz",
+    "lat": 52.53239,
+    "lng": 13.412686
+  },
+  {
+    "name": "U Siemensdamm",
+    "lat": 52.536775,
+    "lng": 13.272764
+  },
+  {
+    "name": "U Sophie-Charlotte-Platz",
+    "lat": 52.510914,
+    "lng": 13.296331
+  },
+  {
+    "name": "U Spichernstraße",
+    "lat": 52.496445,
+    "lng": 13.331009
+  },
+  {
+    "name": "U Spittelmarkt",
+    "lat": 52.511296,
+    "lng": 13.404115
+  },
+  {
+    "name": "U Stadtmitte",
+    "lat": 52.512081,
+    "lng": 13.389655
+  },
+  {
+    "name": "U Strausberger Platz",
+    "lat": 52.518098,
+    "lng": 13.431526
+  },
+  {
+    "name": "U Südstern",
+    "lat": 52.489298,
+    "lng": 13.407667
+  },
+  {
+    "name": "U Tempelhof",
+    "lat": 52.469546,
+    "lng": 13.385627
+  },
+  {
+    "name": "U Theodor-Heuss-Platz",
+    "lat": 52.509987,
+    "lng": 13.272222
+  },
+  {
+    "name": "U Tierpark",
+    "lat": 52.497724,
+    "lng": 13.52296
+  },
+  {
+    "name": "U Turmstraße",
+    "lat": 52.526149,
+    "lng": 13.341297
+  },
+  {
+    "name": "U Uhlandstraße",
+    "lat": 52.502812,
+    "lng": 13.326697
+  },
+  {
+    "name": "U Ullsteinstraße",
+    "lat": 52.453745,
+    "lng": 13.384466
+  },
+  {
+    "name": "U Unter den Linden",
+    "lat": 52.516988,
+    "lng": 13.38882
+  },
+  {
+    "name": "U Viktoria-Luise-Platz",
+    "lat": 52.496175,
+    "lng": 13.343186
+  },
+  {
+    "name": "U Vinetastraße",
+    "lat": 52.559325,
+    "lng": 13.413278
+  },
+  {
+    "name": "U Voltastraße",
+    "lat": 52.54229,
+    "lng": 13.392876
+  },
+  {
+    "name": "U Walther-Schreiber-Platz",
+    "lat": 52.465325,
+    "lng": 13.32826
+  },
+  {
+    "name": "U Warschauer Straße",
+    "lat": 52.505014,
+    "lng": 13.449006
+  },
+  {
+    "name": "U Weberwiese",
+    "lat": 52.516747,
+    "lng": 13.444714
+  },
+  {
+    "name": "U Wedding",
+    "lat": 52.543062,
+    "lng": 13.365037
+  },
+  {
+    "name": "U Weinmeisterstraße",
+    "lat": 52.525467,
+    "lng": 13.405019
+  },
+  {
+    "name": "U Westhafen",
+    "lat": 52.536735,
+    "lng": 13.342574
+  },
+  {
+    "name": "U Westphalweg",
+    "lat": 52.446267,
+    "lng": 13.385691
+  },
+  {
+    "name": "U Wilmersdorfer Straße",
+    "lat": 52.506675,
+    "lng": 13.306637
+  },
+  {
+    "name": "U Wittenau",
+    "lat": 52.595641,
+    "lng": 13.334711
+  },
+  {
+    "name": "U Wittenbergplatz",
+    "lat": 52.501798,
+    "lng": 13.343001
+  },
+  {
+    "name": "U Wuhletal",
+    "lat": 52.512612,
+    "lng": 13.575213
+  },
+  {
+    "name": "U Wutzkyallee",
+    "lat": 52.423326,
+    "lng": 13.474567
+  },
+  {
+    "name": "U Yorckstraße",
+    "lat": 52.492972,
+    "lng": 13.370689
+  },
+  {
+    "name": "U Zitadelle",
+    "lat": 52.537652,
+    "lng": 13.217536
+  },
+  {
+    "name": "U Zoologischer Garten",
+    "lat": 52.505867,
+    "lng": 13.333024
+  },
+  {
+    "name": "U Zwickauer Damm",
+    "lat": 52.42338,
+    "lng": 13.48394
+  }
+]
