@@ -11,4 +11,4 @@
  */
 
 // eslint-disable-next-line no-unused-vars
-window.PROXY_URL = 'https://brw-checkin-proxy.DEIN_BENUTZER.workers.dev'; // Replace with your Cloudflare Worker URL
+window.PROXY_URL = 'https://brw-checkin-proxy.YOUR_USERNAME.workers.dev'; // Replace with your Cloudflare Worker URL
