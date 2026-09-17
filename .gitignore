@@ -3,6 +3,14 @@
 config.js.example
 service_account.json
 employees.json
+
+# Documentation and project notes (kept locally only)
+*.md
+
+# GitHub metadata and agent library (only workflows are needed in the repo)
+.github/*
+!.github/workflows/
+
 __pycache__/
 *.py[cod]
 *$py.class

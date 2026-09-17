@@ -1,3 +1,0 @@
----
-agent: git.commit
----

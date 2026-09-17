@@ -1,3 +1,0 @@
----
-agent: build-error-resolver
----
