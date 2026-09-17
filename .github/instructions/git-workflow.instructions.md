@@ -14,6 +14,13 @@ applyTo: "**/*"
 
 Types: feat, fix, refactor, docs, test, chore, perf, ci
 
+## Commit Author / Co-authored-by Trailer
+
+- Do NOT append a default `Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>` trailer to commits.
+- If a co-author trailer is requested, use the user's preferred identity:
+  `Co-authored-by: FouaadAI <werofofo@gmail.com>`.
+- Otherwise omit the trailer entirely.
+
 ## Pull Request Workflow
 
 When creating PRs:
