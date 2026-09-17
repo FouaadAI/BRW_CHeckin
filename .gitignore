@@ -1,6 +1,6 @@
 .env
 .env.*
-config.js
+config.js.example
 service_account.json
 employees.json
 __pycache__/
