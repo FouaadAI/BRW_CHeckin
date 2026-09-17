@@ -1,14 +1,9 @@
 /**
- * Configuration template for the BRW Check-in frontend.
+ * Public frontend configuration for the BRW Check-in app.
  *
- * IMPORTANT: Copy this file to `config.js` in the repository root and
- * set the public `PROXY_URL` value. The real `config.js` is listed in
- * `.gitignore` and must NEVER be committed to Git.
- *
- * All secrets (PIN, GitHub PAT, Google credentials, Telegram tokens) are
- * stored server-side in the Cloudflare Worker environment and GitHub
- * Repository Secrets. They MUST NOT appear in this file.
+ * This file is safe to commit to Git because it only contains the public
+ * Cloudflare Worker URL. All secrets live server-side in the Worker or in
+ * GitHub Repository Secrets and never appear here.
  */
 
-// eslint-disable-next-line no-unused-vars
-window.PROXY_URL = 'https://brw-checkin-proxy.brainerpro66.workers.dev'; // Replace with your Cloudflare Worker URL
+window.PROXY_URL = 'https://brw-checkin-proxy.brainerpro66.workers.dev';
